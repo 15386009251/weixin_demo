@@ -3,21 +3,24 @@ package com.weixin.util;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 参数类
+ */
 public class ConstantParam {
+    //微信注册所得
     public final static String appid = "wx97d4cbfdb9f21a83";
     public final static String appsecret = "a75d336caee139a8c243bb36490cc1a5";
 
     public final static String token = "2018ceshi";
-
+    //存储于redis的key值
     public final static String tokenKey = "accessToken";
-
+    //存储自动回复消息的map集合
     private static final Map<String, String> keyWords = new HashMap<String, String>();
     private static final Map<String, String> redirectUrls = new HashMap<String, String>();
     private static final Map<String, String> redUrls = new HashMap<String, String>();
 
-
+    //连接微信公众号的接口地址
     public final static String weiChatUrl = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + ConstantParam.appid + "&secret=" + ConstantParam.appsecret;
-    public final static String getCodeUrl = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + ConstantParam.appid + "&secret=" + ConstantParam.appsecret;
 
     static {
         keyWords.put("tencent", "<a href='" + ConstantParam.findRedUrl("tencent") + "'>点击进入</a>");
